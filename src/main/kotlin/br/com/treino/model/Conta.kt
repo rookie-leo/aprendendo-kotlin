@@ -1,6 +1,6 @@
 package br.com.treino.model
 
-class Conta( //Construtor primario
+open class Conta( //Construtor primario
     val titular: String,
     val numero: Int
 ) {
@@ -22,7 +22,7 @@ class Conta( //Construtor primario
         if (valor > 0) saldo += valor
     }
 
-    fun saca(valor: Double) {
+    open fun saca(valor: Double) {
         if (saldo >= valor) {
             saldo -= valor
         } else {
