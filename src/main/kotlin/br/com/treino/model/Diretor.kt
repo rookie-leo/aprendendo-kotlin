@@ -6,14 +6,16 @@ class Diretor(
     salario: Double,
     senha: Int,
     val plr: Double
-) : FuncionarioAdmin(nome = nome, cpf = cpf, salario = salario, senha = senha){
+) : FuncionarioAdmin(
+    nome = nome,
+    cpf = cpf,
+    salario = salario,
+    senha = senha
+), Autenticavel{
 
     override val bonificacao get() = salario + plr * 0.2 // super chama o metodo da super class
 
     override fun autentica(senha: Int): Boolean {
-        if (this.senha == senha){
-            return true
-        }
-        return false
+        return super<FuncionarioAdmin>.autentica(senha)
     }
 }

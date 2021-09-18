@@ -1,6 +1,6 @@
 package br.com.treino
 
-fun main() {
+fun  main() {
     testaAutenticacao()
 }
 

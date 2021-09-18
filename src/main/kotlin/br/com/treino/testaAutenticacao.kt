@@ -1,5 +1,6 @@
 package br.com.treino
 
+import br.com.treino.model.Cliente
 import br.com.treino.model.Diretor
 import br.com.treino.model.Gerente
 import br.com.treino.service.SistemaInterno
@@ -20,8 +21,15 @@ fun testaAutenticacao() {
         plr = 200.0
     )
 
+    val cliente = Cliente(
+        nome = "Cliente",
+        cpf = "555.555.555.55",
+        senha = 789
+    )
+
     val sistema = SistemaInterno()
 
     sistema.entra(gerente, 123)
     sistema.entra(diretor, 4565)
+    sistema.entra(cliente, 789)
 }
