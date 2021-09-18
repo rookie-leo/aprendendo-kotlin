@@ -7,7 +7,7 @@ import br.com.treino.model.Gerente
 import br.com.treino.service.CalculadoraBonificacao
 
 fun testaFuncionarios() {
-    val leo = Funcionario(
+    val leo = Analista(
         "Leonardo",
         "111.111.111.11",
         1000.0
@@ -36,7 +36,7 @@ fun testaFuncionarios() {
     }
 
     val ana: Diretor = Diretor(
-        nome = "Maria",
+        nome = "Ana",
         cpf = "333.3333.333.33",
         salario = 2000.0,
         senha = 456,
@@ -64,6 +64,7 @@ fun testaFuncionarios() {
     println("Nome: ${maria.nome}")
     println("CPF: ${maria.cpf}")
     println("Salario: ${maria.salario}")
+    println("Bonificação: ${maria.bonificacao}")
 
     var calculadoraBonificacao = CalculadoraBonificacao()
 

@@ -1,6 +1,6 @@
 package br.com.treino.model
 
-class Analista(
+class Auxiliar(
     nome: String,
     cpf: String,
     salario: Double
@@ -8,7 +8,7 @@ class Analista(
 
     override val bonificacao: Double
         get() {
-            return Math.ceil(salario * 0.1) // super chama o metodo da super class
+            return salario * 0.05 // super chama o metodo da super class
         }
 
 }
