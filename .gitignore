@@ -1,0 +1,13 @@
+/out/
+gradle
+.gradle
+.idea
+build
+
+
+#archives
+gradle.properties
+build.gradle.kts
+gradlew
+gradlew.bat
+settings.gradle.kts
