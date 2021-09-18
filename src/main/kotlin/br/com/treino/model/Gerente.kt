@@ -4,15 +4,15 @@ class Gerente(
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: Int
-) : Funcionario(nome = nome, cpf = cpf, salario = salario){
+    senha: Int
+) : FuncionarioAdmin(nome = nome, cpf = cpf, salario = salario, senha = senha){
 
     override val bonificacao: Double
         get() {
             return salario * 0.2// super chama o metodo da super class
         }
 
-    fun autentica(senha: Int): Boolean {
+    override fun autentica(senha: Int): Boolean {
         if (this.senha == senha){
             return true
         }
