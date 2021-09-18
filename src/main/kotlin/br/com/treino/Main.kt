@@ -2,9 +2,7 @@ package br.com.treino
 
 fun main() {
 
-    val contaLeo = Conta()
-    contaLeo.titular = "Leo"
-    contaLeo.numero = 1000
+    val contaLeo = Conta(titular = "Leo", numero = 1000)
     contaLeo.deposita(200.0)
     println(contaLeo.titular)
     println(contaLeo.numero)
@@ -13,9 +11,7 @@ fun main() {
     contaLeo.deposita(70.0)
     println(contaLeo.getSaldo())
 
-    val contaJaq = Conta()
-    contaJaq.titular = "Jaque"
-    contaJaq.numero = 2000
+    val contaJaq = Conta(numero = 2000, titular = "Jaque")
     contaJaq.deposita(300.0)
     println(contaJaq.titular)
     println(contaJaq.numero)
@@ -47,20 +43,21 @@ fun main() {
     }
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta( //Construtor primario
+    val titular: String,
+    val numero: Int
+) {
     private var saldo = 0.0
 //        get() {
 //            return field
-//        } //implementacao padrao
+//        } //implementacao padrao do metodo get
 
-//    constructor(titular: String, numero: Int) {
+//    constructor(titular: String, numero: Int) {//Construtor secundario
 //        this.titular = titular
 //        this.numero = numero
 //    }
 
-    fun getSaldo(): Double {
+    fun getSaldo(): Double {//Nao eh a forma mais ideal de se fazer
         return saldo
     }
 
